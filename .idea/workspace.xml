@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c6a692-6a25-423f-8c27-9343d21899eb" name="Changes" comment="add controllers">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/ag/fuzz_unit_test/fuzz_unit_test/unit/UserControllerTest.java" afterDir="false" />
+    <list default="true" id="d8c6a692-6a25-423f-8c27-9343d21899eb" name="Changes" comment="add tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cifuzz.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cifuzz.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +56,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.JsonParserFuzzTest.testJsonPathExtraction.executor": "Run",
+    "JUnit.UserControllerTest.updateUser_WhenValid_ShouldReturnUpdatedUser.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
@@ -73,7 +73,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.JsonParserFuzzTest.testJsonPathExtraction">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -104,6 +104,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JsonParserFuzzTest.testJsonPathExtraction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fuzz-unit-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ag.fuzz_unit_test.fuzz_unit_test.fuzz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.fuzz" />
+      <option name="MAIN_CLASS_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.fuzz.JsonParserFuzzTest" />
+      <option name="METHOD_NAME" value="testJsonPathExtraction(com.code_intelligence.jazzer.api.FuzzedDataProvider)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.updateUser_WhenValid_ShouldReturnUpdatedUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fuzz-unit-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ag.fuzz_unit_test.fuzz_unit_test.integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.integration" />
+      <option name="MAIN_CLASS_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.integration.UserControllerTest" />
+      <option name="METHOD_NAME" value="updateUser_WhenValid_ShouldReturnUpdatedUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FuzzUnitTestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="fuzz-unit-test" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ag.fuzz_unit_test.fuzz_unit_test.FuzzUnitTestApplication" />
@@ -111,6 +143,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.JsonParserFuzzTest.testJsonPathExtraction" />
+        <item itemvalue="JUnit.UserControllerTest.updateUser_WhenValid_ShouldReturnUpdatedUser" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -129,7 +167,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744636838832</updated>
       <workItem from="1744636840250" duration="1926000" />
-      <workItem from="1744639656439" duration="1108000" />
+      <workItem from="1744639656439" duration="1231000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -147,7 +185,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744640303054</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add tests">
+      <option name="closed" value="true" />
+      <created>1744640785833</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744640785833</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add tests">
+      <option name="closed" value="true" />
+      <created>1744640793713</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744640793713</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +210,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="add controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="add controllers" />
+    <MESSAGE value="add tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="add tests" />
   </component>
 </project>
