@@ -77,4 +77,28 @@
 		</plugins>
 	</build>
 
+	<profiles>
+		<profile>
+			<id>jazzer</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<includes>
+								<include>**/*FuzzTest.java</include>
+							</includes>
+							<systemPropertyVariables>
+								<jazzer.fuzz.duration>30</jazzer.fuzz.duration>
+								<jazzer.fuzz.save_corpus>true</jazzer.fuzz.save_corpus>
+								<jazzer.fuzz.corpus_dir>${project.build.directory}/fuzz-results</jazzer.fuzz.corpus_dir>
+							</systemPropertyVariables>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
 </project>
