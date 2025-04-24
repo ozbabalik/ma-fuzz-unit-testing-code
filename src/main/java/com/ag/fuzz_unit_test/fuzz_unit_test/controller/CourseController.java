@@ -3,8 +3,11 @@ package com.ag.fuzz_unit_test.fuzz_unit_test.controller;
 import com.ag.fuzz_unit_test.fuzz_unit_test.dto.CourseDto;
 import com.ag.fuzz_unit_test.fuzz_unit_test.entity.Course;
 import com.ag.fuzz_unit_test.fuzz_unit_test.entity.CourseStatus;
+import com.ag.fuzz_unit_test.fuzz_unit_test.entity.Trainer;
+import com.ag.fuzz_unit_test.fuzz_unit_test.exception.ResourceNotFoundException;
 import com.ag.fuzz_unit_test.fuzz_unit_test.mapper.CourseMapper;
 import com.ag.fuzz_unit_test.fuzz_unit_test.service.CourseService;
+import com.ag.fuzz_unit_test.fuzz_unit_test.service.TrainerService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,11 +22,14 @@ public class CourseController {
 
     private final CourseService courseService;
     private final CourseMapper courseMapper;
+    private final TrainerService trainerService;
 
     @Autowired
-    public CourseController(CourseService courseService, CourseMapper courseMapper) {
+    public CourseController(CourseService courseService, CourseMapper courseMapper, 
+                           TrainerService trainerService) {
         this.courseService = courseService;
         this.courseMapper = courseMapper;
+        this.trainerService = trainerService;
     }
 
     @GetMapping
@@ -65,8 +71,21 @@ public class CourseController {
     }
 
     @DeleteMapping("/{courseId}/trainer")
-    public ResponseEntity<CourseDto> removeTrainer(@PathVariable Long courseId) {
-        Course course = courseService.removeTrainer(courseId);
+    public ResponseEntity<CourseDto> removeTrainer(
+            @PathVariable Long courseId,
+            @RequestParam(required = false) Long replacementTrainerId) {
+        
+        // Use existing courseService.getCourseById instead of findById
+        Course course = courseService.getCourseById(courseId);
+        
+        if (replacementTrainerId != null) {
+            // Use the replacement trainer ID from the request parameter
+            course = courseService.assignTrainer(courseId, replacementTrainerId);
+        } else {
+            // If no replacement trainer is provided, use the service method
+            course = courseService.removeTrainer(courseId);
+        }
+        
         return ResponseEntity.ok(courseMapper.toDto(course));
     }
 

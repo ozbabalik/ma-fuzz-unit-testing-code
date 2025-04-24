@@ -199,18 +199,27 @@ public class CourseControllerIT {
         testCourse.setTrainer(testTrainer);
         testCourse = courseRepository.save(testCourse);
 
-        // Perform DELETE request
+        // Create another trainer to use as replacement
+        Trainer replacementTrainer = new Trainer();
+        replacementTrainer.setFirstName("Replacement");
+        replacementTrainer.setLastName("Trainer");
+        replacementTrainer.setEmail("replacement@example.com");
+        replacementTrainer.setQualification("Replacement Expert");
+        replacementTrainer = trainerRepository.save(replacementTrainer);
+        
+        // Perform DELETE request, passing replacement trainer ID
         mockMvc
-                .perform(delete("/api/courses/{courseId}/trainer", testCourse.getId()))
+                .perform(delete("/api/courses/{courseId}/trainer?replacementTrainerId={replacementId}", 
+                        testCourse.getId(), replacementTrainer.getId()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id", is(testCourse.getId().intValue())))
-                .andExpect(jsonPath("$.trainer").doesNotExist());
+                .andExpect(jsonPath("$.trainer.id", is(replacementTrainer.getId().intValue())));
 
-        // Verify trainer was removed in database
+        // Verify trainer was changed in database
         Optional<Course> updatedCourse = courseRepository.findById(testCourse.getId());
         assertTrue(updatedCourse.isPresent());
-        assertNull(updatedCourse.get().getTrainer());
+        assertEquals(replacementTrainer.getId(), updatedCourse.get().getTrainer().getId());
     }
 
     @Test
