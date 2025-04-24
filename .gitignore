@@ -139,3 +139,7 @@ buildNumber.properties
 *.pem
 
 /workoutPlan
+
+/htmlReport
+
+/.idea
