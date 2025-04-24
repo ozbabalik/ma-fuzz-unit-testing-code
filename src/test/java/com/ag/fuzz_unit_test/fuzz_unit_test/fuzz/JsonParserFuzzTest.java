@@ -8,9 +8,18 @@ import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import com.ag.fuzz_unit_test.fuzz_unit_test.repository.UserRepository;
+import com.ag.fuzz_unit_test.fuzz_unit_test.repository.OrderRepository;
 
-@SpringBootTest(classes = FuzzTestConfig.class)
+@SpringBootTest
 public class JsonParserFuzzTest {
+
+    @MockBean
+    private UserRepository userRepository;
+    
+    @MockBean
+    private OrderRepository orderRepository;
 
     @Autowired
     private JsonParser jsonParser;

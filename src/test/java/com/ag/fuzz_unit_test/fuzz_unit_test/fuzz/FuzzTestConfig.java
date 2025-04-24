@@ -9,28 +9,37 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
 
 @TestConfiguration
 public class FuzzTestConfig {
 
+    // Store mocks as fields to avoid Spring proxy issues
+    private final UserRepository userRepository = Mockito.mock(UserRepository.class);
+    private final OrderRepository orderRepository = Mockito.mock(OrderRepository.class);
+
     @Bean
+    @Primary
     public UserRepository userRepository() {
-        return Mockito.mock(UserRepository.class);
+        return userRepository;
     }
 
     @Bean
+    @Primary
     public OrderRepository orderRepository() {
-        return Mockito.mock(OrderRepository.class);
+        return orderRepository;
     }
 
     @Bean
+    @Primary
     public UserService userService() {
-        return new UserService(userRepository());
+        return new UserService(userRepository);
     }
 
     @Bean
+    @Primary
     public OrderService orderService() {
-        return new OrderService(orderRepository(), userRepository());
+        return new OrderService(orderRepository, userRepository);
     }
 
     @Bean
