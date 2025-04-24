@@ -1,5 +1,6 @@
 package com.ag.fuzz_unit_test.fuzz_unit_test.controller;
 
+import com.ag.fuzz_unit_test.fuzz_unit_test.FuzzUnitTestApplication;
 import com.ag.fuzz_unit_test.fuzz_unit_test.dto.CourseDto;
 import com.ag.fuzz_unit_test.fuzz_unit_test.entity.Course;
 import com.ag.fuzz_unit_test.fuzz_unit_test.entity.CourseStatus;
@@ -7,6 +8,7 @@ import com.ag.fuzz_unit_test.fuzz_unit_test.entity.Trainer;
 import com.ag.fuzz_unit_test.fuzz_unit_test.mapper.CourseMapper;
 import com.ag.fuzz_unit_test.fuzz_unit_test.repository.CourseRepository;
 import com.ag.fuzz_unit_test.fuzz_unit_test.repository.TrainerRepository;
+import com.ag.fuzz_unit_test.fuzz_unit_test.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,6 +16,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -26,7 +32,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@SpringBootTest
+@SpringBootTest(classes = {FuzzUnitTestApplication.class, TestConfig.class})
 @AutoConfigureMockMvc
 public class CourseControllerIT {
 
@@ -44,6 +50,9 @@ public class CourseControllerIT {
 
     @Autowired
     private CourseMapper courseMapper;
+
+    @MockBean
+    private UserService userService;
 
     private Course testCourse;
     private Trainer testTrainer;
@@ -237,4 +246,11 @@ public class CourseControllerIT {
                 status().isBadRequest()).andExpect(jsonPath("$.status", is(400))).andExpect(
                 jsonPath("$.fieldErrors", aMapWithSize(greaterThan(0))));
     }
+}
+
+@TestConfiguration
+@ComponentScan(excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,
+                                                      classes = UserService.class))
+class TestConfig {
+    // Define your test beans here
 } 

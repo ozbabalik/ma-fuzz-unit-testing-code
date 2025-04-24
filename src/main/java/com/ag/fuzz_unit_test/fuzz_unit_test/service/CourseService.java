@@ -168,7 +168,7 @@ public class CourseService {
      */
     @Transactional(readOnly = true)
     public List<Course> getCoursesByStatus(CourseStatus status) {
-        return courseRepository.findByCourseStatus(status);
+        return courseRepository.findByStatus(status);
     }
 
     /**

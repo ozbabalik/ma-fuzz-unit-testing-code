@@ -7,10 +7,10 @@ import com.ag.fuzz_unit_test.fuzz_unit_test.service.UserService;
 import com.ag.fuzz_unit_test.fuzz_unit_test.util.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.mockito.Mockito;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
+@TestConfiguration
 public class FuzzTestConfig {
 
     @Bean

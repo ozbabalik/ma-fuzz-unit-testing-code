@@ -16,5 +16,5 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
      * @param status the course status to filter by
      * @return a list of courses with the given status
      */
-    List<Course> findByCourseStatus(CourseStatus status);
+    List<Course> findByStatus(CourseStatus status);
 } 
