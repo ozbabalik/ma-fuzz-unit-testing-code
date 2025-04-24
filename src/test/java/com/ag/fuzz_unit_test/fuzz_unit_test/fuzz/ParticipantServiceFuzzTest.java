@@ -66,7 +66,7 @@ public class ParticipantServiceFuzzTest {
         String firstName = data.consumeString(20);
         String lastName = data.consumeString(20);
         String email = data.consumeString(50);
-        String phone = data.consumePrintableAsciiString(15);
+        String phone = data.consumeAsciiString(15);
         boolean existingEmail = data.consumeBoolean();
 
         // Create a participant with the generated data
@@ -120,7 +120,7 @@ public class ParticipantServiceFuzzTest {
         String firstName = data.consumeString(20);
         String lastName = data.consumeString(20);
         String email = data.consumeString(50);
-        String phone = data.consumePrintableAsciiString(15);
+        String phone = data.consumeAsciiString(15);
         boolean existingParticipant = data.consumeBoolean();
         boolean duplicateEmail = data.consumeBoolean();
 

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c6a692-6a25-423f-8c27-9343d21899eb" name="Changes" comment="add tests">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="d8c6a692-6a25-423f-8c27-9343d21899eb" name="Changes" comment="fix tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ag/fuzz_unit_test/fuzz_unit_test/repository/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ag/fuzz_unit_test/fuzz_unit_test/repository/BookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ag/fuzz_unit_test/fuzz_unit_test/fuzz/ParticipantServiceFuzzTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ag/fuzz_unit_test/fuzz_unit_test/fuzz/ParticipantServiceFuzzTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +57,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.JsonParserFuzzTest.executor": "Run",
     "JUnit.JsonParserFuzzTest.testJsonPathExtraction.executor": "Run",
     "JUnit.UserControllerTest.updateUser_WhenValid_ShouldReturnUpdatedUser.executor": "Run",
+    "JUnit.fuzz_unit_test in fuzz-unit-test.executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
@@ -73,7 +76,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.JsonParserFuzzTest.testJsonPathExtraction">
+  <component name="RunManager" selected="JUnit.fuzz_unit_test in fuzz-unit-test">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -100,6 +103,21 @@
       <option name="resourceGroup" />
       <option name="stagingFolder" />
       <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JsonParserFuzzTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fuzz-unit-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ag.fuzz_unit_test.fuzz_unit_test.fuzz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.fuzz" />
+      <option name="MAIN_CLASS_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.fuzz.JsonParserFuzzTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -136,6 +154,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="fuzz_unit_test in fuzz-unit-test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fuzz-unit-test" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/com/ag/fuzz_unit_test/fuzz_unit_test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FuzzUnitTestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="fuzz-unit-test" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ag.fuzz_unit_test.fuzz_unit_test.FuzzUnitTestApplication" />
@@ -145,6 +171,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.fuzz_unit_test in fuzz-unit-test" />
+        <item itemvalue="JUnit.JsonParserFuzzTest" />
         <item itemvalue="JUnit.JsonParserFuzzTest.testJsonPathExtraction" />
         <item itemvalue="JUnit.UserControllerTest.updateUser_WhenValid_ShouldReturnUpdatedUser" />
       </list>
@@ -153,8 +181,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
       </set>
     </attachedChunks>
   </component>
@@ -167,7 +195,9 @@
       <option name="presentableId" value="Default" />
       <updated>1744636838832</updated>
       <workItem from="1744636840250" duration="1926000" />
-      <workItem from="1744639656439" duration="1308000" />
+      <workItem from="1744639656439" duration="2696000" />
+      <workItem from="1745252815552" duration="3779000" />
+      <workItem from="1745527476584" duration="247000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -209,16 +239,107 @@
       <option name="project" value="LOCAL" />
       <updated>1744640927543</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update gitingore">
+      <option name="closed" value="true" />
+      <created>1744640978814</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1744640978814</updated>
+    </task>
+    <task id="LOCAL-00007" summary="create new entities">
+      <option name="closed" value="true" />
+      <created>1745255017026</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1745255017026</updated>
+    </task>
+    <task id="LOCAL-00008" summary="create new repos">
+      <option name="closed" value="true" />
+      <created>1745255117672</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1745255117673</updated>
+    </task>
+    <task id="LOCAL-00009" summary="create new services">
+      <option name="closed" value="true" />
+      <created>1745255250912</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1745255250912</updated>
+    </task>
+    <task id="LOCAL-00010" summary="create new endpoints">
+      <option name="closed" value="true" />
+      <created>1745255475157</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745255475157</updated>
+    </task>
+    <task id="LOCAL-00011" summary="create new endpoints">
+      <option name="closed" value="true" />
+      <created>1745255647413</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1745255647413</updated>
+    </task>
+    <task id="LOCAL-00012" summary="create test">
+      <option name="closed" value="true" />
+      <created>1745255789524</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1745255789524</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add readme">
+      <option name="closed" value="true" />
+      <created>1745255873030</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1745255873030</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fix tests">
+      <option name="closed" value="true" />
+      <created>1745256031306</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1745256031306</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="add controllers" />
     <MESSAGE value="add tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="add tests" />
+    <MESSAGE value="update gitingore" />
+    <MESSAGE value="create new entities" />
+    <MESSAGE value="create new repos" />
+    <MESSAGE value="create new services" />
+    <MESSAGE value="create new endpoints" />
+    <MESSAGE value="create test" />
+    <MESSAGE value="add readme" />
+    <MESSAGE value="fix tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix tests" />
   </component>
 </project>

@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface BookingRepository extends JpaRepository<Booking, Long> {
@@ -18,4 +19,13 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
      * @return a list of bookings matching the criteria
      */
     List<Booking> findByCourseIdAndStatus(Long courseId, BookingStatus status);
+    
+    /**
+     * Find a booking by participant ID and course ID
+     * 
+     * @param participantId the ID of the participant
+     * @param courseId the ID of the course
+     * @return an Optional containing the booking if found
+     */
+    Optional<Booking> findByParticipantIdAndCourseId(Long participantId, Long courseId);
 } 
