@@ -67,14 +67,15 @@ public class CourseControllerIT {
         testTrainer.setQualification("Java Expert");
         testTrainer = trainerRepository.save(testTrainer);
 
-        // Create test course
+        // Create test course with the trainer assigned
         testCourse = new Course();
-        testCourse.setName("Spring Boot Masterclass");
-        testCourse.setDescription("Learn Spring Boot from scratch");
-        testCourse.setStartDate(LocalDate.now().plusDays(5));
-        testCourse.setEndDate(LocalDate.now().plusDays(15));
-        testCourse.setMaxSeats(15);
+        testCourse.setName("Test Course");
+        testCourse.setDescription("Test Description");
+        testCourse.setStartDate(LocalDate.now().plusDays(1));
+        testCourse.setEndDate(LocalDate.now().plusDays(10));
         testCourse.setStatus(CourseStatus.PLANNED);
+        testCourse.setMaxSeats(20);
+        testCourse.setTrainer(testTrainer); // Set the trainer before saving
         testCourse = courseRepository.save(testCourse);
     }
 
