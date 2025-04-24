@@ -191,7 +191,10 @@ public class ParticipantServiceTest {
         // Given
         participant.setStatus(ParticipantStatus.INACTIVE);
         when(participantRepository.findById(anyLong())).thenReturn(Optional.of(participant));
-
+        
+        // We no longer need to mock courseRepository since the method will throw
+        // an exception before calling it
+        
         // When & Then
         BusinessException exception = assertThrows(BusinessException.class, () -> {
             participantService.bookCourse(participant.getId(), course.getId());
@@ -199,6 +202,8 @@ public class ParticipantServiceTest {
 
         assertEquals("Participant is not active and cannot book courses", exception.getMessage());
         verify(participantRepository, times(1)).findById(participant.getId());
+        
+        // Update this line since courseRepository should never be called
         verify(courseRepository, never()).findById(anyLong());
         verify(bookingRepository, never()).save(any(Booking.class));
     }

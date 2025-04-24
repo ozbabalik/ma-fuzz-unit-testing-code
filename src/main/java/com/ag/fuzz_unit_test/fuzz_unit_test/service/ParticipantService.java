@@ -94,14 +94,14 @@ public class ParticipantService {
     public Booking bookCourse(Long participantId, Long courseId) {
         Participant participant = participantRepository.findById(participantId)
                 .orElseThrow(() -> new ResourceNotFoundException("Participant not found with id: " + participantId));
-
-        Course course = courseRepository.findById(courseId)
-                .orElseThrow(() -> new ResourceNotFoundException("Course not found with id: " + courseId));
-
-        // Check if participant is active
+        
+        // Check if participant is active before looking up the course
         if (participant.getStatus() != ParticipantStatus.ACTIVE) {
             throw new BusinessException("Participant is not active and cannot book courses");
         }
+        
+        Course course = courseRepository.findById(courseId)
+                .orElseThrow(() -> new ResourceNotFoundException("Course not found with id: " + courseId));
 
         // Check if course is in a bookable state
         if (course.getStatus() != CourseStatus.PLANNED && course.getStatus() != CourseStatus.ACTIVE) {
