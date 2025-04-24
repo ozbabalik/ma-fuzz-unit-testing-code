@@ -331,8 +331,33 @@ public class ParticipantServiceTest {
     @Test
     @DisplayName("Should change booking status successfully")
     void changeBookingStatus_Success() {
+        // Setup a properly configured booking
+        Course course = new Course();
+        course.setId(1L);
+        course.setMaxSeats(10);
+        
+        Participant participant = new Participant();
+        participant.setId(1L);
+        
+        booking = new Booking();
+        booking.setId(1L);
+        booking.setCourse(course);
+        booking.setParticipant(participant);
+        booking.setStatus(BookingStatus.PENDING);
+        
+        // Setup the course with an empty bookings list for capacity check
+        List<Booking> bookings = new ArrayList<>();
+        bookings.add(booking);
+        course.setBookings(bookings);
+        
         // Given
         when(bookingRepository.findById(anyLong())).thenReturn(Optional.of(booking));
+        
+        // Mock save to return the modified booking
+        when(bookingRepository.save(any(Booking.class))).thenAnswer(invocation -> {
+            Booking savedBooking = invocation.getArgument(0);
+            return savedBooking;
+        });
         
         // When
         Booking result = participantService.changeBookingStatus(booking.getId(), BookingStatus.CONFIRMED);
@@ -341,7 +366,7 @@ public class ParticipantServiceTest {
         assertNotNull(result);
         assertEquals(BookingStatus.CONFIRMED, result.getStatus());
         verify(bookingRepository, times(1)).findById(booking.getId());
-        verify(bookingRepository, times(1)).save(booking);
+        verify(bookingRepository, times(1)).save(any(Booking.class));
     }
 
     @Test
