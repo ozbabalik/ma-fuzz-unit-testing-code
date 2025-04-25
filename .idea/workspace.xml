@@ -89,7 +89,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CourseServiceTest">
+  <component name="RunManager" selected="JUnit.TrainerServiceTest">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -135,21 +135,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonParserFuzzTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fuzz-unit-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ag.fuzz_unit_test.fuzz_unit_test.fuzz.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.fuzz" />
-      <option name="MAIN_CLASS_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.fuzz.JsonParserFuzzTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ParticipantServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fuzz-unit-test" />
       <extension name="coverage">
@@ -181,6 +166,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TrainerServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fuzz-unit-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ag.fuzz_unit_test.fuzz_unit_test.unit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.unit" />
+      <option name="MAIN_CLASS_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.unit.TrainerServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="java in fuzz-unit-test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fuzz-unit-test" />
       <option name="TEST_OBJECT" value="directory" />
@@ -198,11 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TrainerServiceTest" />
         <item itemvalue="JUnit.CourseServiceTest" />
         <item itemvalue="JUnit.ParticipantServiceTest (1)" />
         <item itemvalue="JUnit.java in fuzz-unit-test" />
         <item itemvalue="JUnit.ParticipantServiceTest" />
-        <item itemvalue="JUnit.JsonParserFuzzTest" />
       </list>
     </recent_temporary>
   </component>
