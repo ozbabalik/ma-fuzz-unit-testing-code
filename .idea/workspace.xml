@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c6a692-6a25-423f-8c27-9343d21899eb" name="Changes" comment="add seperate configs">
+    <list default="true" id="d8c6a692-6a25-423f-8c27-9343d21899eb" name="Changes" comment="create trainer service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,8 +63,10 @@
     "JUnit.CourseServiceTest.executor": "Run",
     "JUnit.JsonParserFuzzTest.executor": "Run",
     "JUnit.JsonParserFuzzTest.testJsonPathExtraction.executor": "Run",
+    "JUnit.OrderServiceTest.executor": "Run",
     "JUnit.ParticipantServiceTest (1).executor": "Run",
     "JUnit.ParticipantServiceTest.executor": "Run",
+    "JUnit.TrainerServiceTest.executor": "Run",
     "JUnit.UserControllerTest.updateUser_WhenValid_ShouldReturnUpdatedUser.executor": "Run",
     "JUnit.fuzz_unit_test in fuzz-unit-test (1).executor": "Run",
     "JUnit.fuzz_unit_test in fuzz-unit-test.executor": "Coverage",
@@ -89,7 +91,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TrainerServiceTest">
+  <component name="RunManager" selected="JUnit.OrderServiceTest">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -135,6 +137,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OrderServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fuzz-unit-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ag.fuzz_unit_test.fuzz_unit_test.unit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.unit" />
+      <option name="MAIN_CLASS_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.unit.OrderServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ParticipantServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fuzz-unit-test" />
       <extension name="coverage">
@@ -146,22 +163,6 @@
       <option name="PACKAGE_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.unit" />
       <option name="MAIN_CLASS_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.unit.ParticipantServiceTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ParticipantServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fuzz-unit-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ag.fuzz_unit_test.fuzz_unit_test.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.service" />
-      <option name="MAIN_CLASS_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.service.ParticipantServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -198,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderServiceTest" />
         <item itemvalue="JUnit.TrainerServiceTest" />
         <item itemvalue="JUnit.CourseServiceTest" />
         <item itemvalue="JUnit.ParticipantServiceTest (1)" />
         <item itemvalue="JUnit.java in fuzz-unit-test" />
-        <item itemvalue="JUnit.ParticipantServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +226,7 @@
       <workItem from="1744636840250" duration="1926000" />
       <workItem from="1744639656439" duration="2696000" />
       <workItem from="1745252815552" duration="3779000" />
-      <workItem from="1745527476584" duration="8129000" />
+      <workItem from="1745527476584" duration="8491000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -435,7 +436,31 @@
       <option name="project" value="LOCAL" />
       <updated>1745531346324</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="create CourseServiceTest">
+      <option name="closed" value="true" />
+      <created>1745579023400</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1745579023400</updated>
+    </task>
+    <task id="LOCAL-00028" summary="create Participant test">
+      <option name="closed" value="true" />
+      <created>1745579039592</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1745579039592</updated>
+    </task>
+    <task id="LOCAL-00029" summary="create trainer service">
+      <option name="closed" value="true" />
+      <created>1745579188576</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1745579188576</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,7 +495,10 @@
     <MESSAGE value="fix" />
     <MESSAGE value="add maven.yml" />
     <MESSAGE value="add seperate configs" />
-    <option name="LAST_COMMIT_MESSAGE" value="add seperate configs" />
+    <MESSAGE value="create CourseServiceTest" />
+    <MESSAGE value="create Participant test" />
+    <MESSAGE value="create trainer service" />
+    <option name="LAST_COMMIT_MESSAGE" value="create trainer service" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ma_fuzz_unit_testing_code$fuzz_unit_test_in_fuzz_unit_test.ic" NAME="fuzz_unit_test in fuzz-unit-test Coverage Results" MODIFIED="1745527734281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
