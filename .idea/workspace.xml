@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c6a692-6a25-423f-8c27-9343d21899eb" name="Changes" comment="fix tests">
+    <list default="true" id="d8c6a692-6a25-423f-8c27-9343d21899eb" name="Changes" comment="add seperate configs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ag/fuzz_unit_test/fuzz_unit_test/repository/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ag/fuzz_unit_test/fuzz_unit_test/repository/BookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ag/fuzz_unit_test/fuzz_unit_test/fuzz/ParticipantServiceFuzzTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ag/fuzz_unit_test/fuzz_unit_test/fuzz/ParticipantServiceFuzzTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +14,10 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/htmlReport" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,10 +59,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.CourseControllerIT.executor": "Run",
+    "JUnit.CourseServiceTest.executor": "Run",
     "JUnit.JsonParserFuzzTest.executor": "Run",
     "JUnit.JsonParserFuzzTest.testJsonPathExtraction.executor": "Run",
+    "JUnit.ParticipantServiceTest (1).executor": "Run",
+    "JUnit.ParticipantServiceTest.executor": "Run",
     "JUnit.UserControllerTest.updateUser_WhenValid_ShouldReturnUpdatedUser.executor": "Run",
+    "JUnit.fuzz_unit_test in fuzz-unit-test (1).executor": "Run",
     "JUnit.fuzz_unit_test in fuzz-unit-test.executor": "Coverage",
+    "JUnit.java in fuzz-unit-test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
@@ -76,7 +84,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.fuzz_unit_test in fuzz-unit-test">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CourseServiceTest">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -107,6 +120,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CourseServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fuzz-unit-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ag.fuzz_unit_test.fuzz_unit_test.unit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.unit" />
+      <option name="MAIN_CLASS_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.unit.CourseServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JsonParserFuzzTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fuzz-unit-test" />
       <extension name="coverage">
@@ -122,42 +150,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonParserFuzzTest.testJsonPathExtraction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParticipantServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fuzz-unit-test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ag.fuzz_unit_test.fuzz_unit_test.fuzz.*" />
+          <option name="PATTERN" value="com.ag.fuzz_unit_test.fuzz_unit_test.unit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.fuzz" />
-      <option name="MAIN_CLASS_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.fuzz.JsonParserFuzzTest" />
-      <option name="METHOD_NAME" value="testJsonPathExtraction(com.code_intelligence.jazzer.api.FuzzedDataProvider)" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.unit" />
+      <option name="MAIN_CLASS_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.unit.ParticipantServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserControllerTest.updateUser_WhenValid_ShouldReturnUpdatedUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParticipantServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fuzz-unit-test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ag.fuzz_unit_test.fuzz_unit_test.integration.*" />
+          <option name="PATTERN" value="com.ag.fuzz_unit_test.fuzz_unit_test.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.integration" />
-      <option name="MAIN_CLASS_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.integration.UserControllerTest" />
-      <option name="METHOD_NAME" value="updateUser_WhenValid_ShouldReturnUpdatedUser" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.service" />
+      <option name="MAIN_CLASS_NAME" value="com.ag.fuzz_unit_test.fuzz_unit_test.service.ParticipantServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="fuzz_unit_test in fuzz-unit-test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="java in fuzz-unit-test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fuzz-unit-test" />
       <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java/com/ag/fuzz_unit_test/fuzz_unit_test" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -171,10 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.fuzz_unit_test in fuzz-unit-test" />
+        <item itemvalue="JUnit.CourseServiceTest" />
+        <item itemvalue="JUnit.ParticipantServiceTest (1)" />
+        <item itemvalue="JUnit.java in fuzz-unit-test" />
+        <item itemvalue="JUnit.ParticipantServiceTest" />
         <item itemvalue="JUnit.JsonParserFuzzTest" />
-        <item itemvalue="JUnit.JsonParserFuzzTest.testJsonPathExtraction" />
-        <item itemvalue="JUnit.UserControllerTest.updateUser_WhenValid_ShouldReturnUpdatedUser" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +225,7 @@
       <workItem from="1744636840250" duration="1926000" />
       <workItem from="1744639656439" duration="2696000" />
       <workItem from="1745252815552" duration="3779000" />
-      <workItem from="1745527476584" duration="247000" />
+      <workItem from="1745527476584" duration="8129000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -311,7 +339,103 @@
       <option name="project" value="LOCAL" />
       <updated>1745256031306</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix test">
+      <option name="closed" value="true" />
+      <created>1745527825112</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1745527825112</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix test">
+      <option name="closed" value="true" />
+      <created>1745528187172</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1745528187172</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fix test">
+      <option name="closed" value="true" />
+      <created>1745528337965</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1745528337965</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix test">
+      <option name="closed" value="true" />
+      <created>1745528615164</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1745528615164</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix CourseControllerIT">
+      <option name="closed" value="true" />
+      <created>1745528896430</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1745528896430</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix ParticipantServiceTest">
+      <option name="closed" value="true" />
+      <created>1745529451772</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1745529451772</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fix ParticipantServiceTest">
+      <option name="closed" value="true" />
+      <created>1745529530214</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1745529530214</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fix ParticipantServiceTest">
+      <option name="closed" value="true" />
+      <created>1745529707885</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1745529707885</updated>
+    </task>
+    <task id="LOCAL-00023" summary="fix CourseControllerIT">
+      <option name="closed" value="true" />
+      <created>1745530106268</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1745530106268</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fix">
+      <option name="closed" value="true" />
+      <created>1745531038758</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1745531038758</updated>
+    </task>
+    <task id="LOCAL-00025" summary="add maven.yml">
+      <option name="closed" value="true" />
+      <created>1745531124760</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1745531124760</updated>
+    </task>
+    <task id="LOCAL-00026" summary="add seperate configs">
+      <option name="closed" value="true" />
+      <created>1745531346324</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1745531346324</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,6 +464,15 @@
     <MESSAGE value="create test" />
     <MESSAGE value="add readme" />
     <MESSAGE value="fix tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix tests" />
+    <MESSAGE value="fix test" />
+    <MESSAGE value="fix ParticipantServiceTest" />
+    <MESSAGE value="fix CourseControllerIT" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="add maven.yml" />
+    <MESSAGE value="add seperate configs" />
+    <option name="LAST_COMMIT_MESSAGE" value="add seperate configs" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ma_fuzz_unit_testing_code$fuzz_unit_test_in_fuzz_unit_test.ic" NAME="fuzz_unit_test in fuzz-unit-test Coverage Results" MODIFIED="1745527734281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>
